@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import soundfile as sf
+import time
+
+start_time = time.time()
 # import math
 
 #Variables
@@ -48,15 +51,17 @@ x_truncarray = np.ravel(x_trunc)
 #calculate difference between initial and reconstructed signals
 residual = data_extended - x_truncarray
 
+#
+# #Plots
+# f, axarr = plt.subplots(3, sharex=True)
+# axarr[2].plot(residual)
+# axarr[2].set_title('Residual')
+# axarr[1].plot(x_truncarray)
+# axarr[1].set_title('Reconstructed')
+# axarr[0].plot(data_extended)
+# axarr[0].set_title('Original')
 
-#Plots
-f, axarr = plt.subplots(3, sharex=True)
-axarr[2].plot(residual)
-axarr[2].set_title('Residual')
-axarr[1].plot(x_truncarray)
-axarr[1].set_title('Reconstructed')
-axarr[0].plot(data_extended)
-axarr[0].set_title('Original')
+print("--- %s seconds ---" % (time.time() - start_time))
 
 
 end = 1
