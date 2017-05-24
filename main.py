@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 import soundfile as sf
 from SingleMic import segment_overlap as s_o
 from SingleMic import inverse_segment_overlap as i_s_o
+import time
+
+start_time = time.time()
+
 #Variables
 tsegment = 20e-3 #20ms segment
 overlap = 0.5
@@ -29,16 +33,17 @@ residual = data_extended - x_truncarray
 
 
 #Plots
-f, axarr = plt.subplots(3, sharex=True)
-axarr[2].plot(residual)
-axarr[2].set_title('Residual')
-axarr[1].plot(x_truncarray)
-axarr[1].set_title('Reconstructed')
-axarr[0].plot(data_extended)
-axarr[0].set_title('Original')
+# f, axarr = plt.subplots(3, sharex=True)
+# axarr[2].plot(residual)
+# axarr[2].set_title('Residual')
+# axarr[1].plot(x_truncarray)
+# axarr[1].set_title('Reconstructed')
+# axarr[0].plot(data_extended)
+# axarr[0].set_title('Original')
+#
+# plt.show()
 
-
-
+print("--- %s seconds ---" % (time.time() - start_time))
 end = 1
 
 
